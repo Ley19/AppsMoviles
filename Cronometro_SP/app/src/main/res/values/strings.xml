@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Cronometro_SP</string>
+    <string name="btn_Empezar">Empezar</string>
+    <string name="btn_Reiniciar">Reiniciar</string>
+    <string name="btn_Vuelta">Vuelta</string>
+    <string name="tv_tiempo">00:00:00.000</string>
+
+</resources>
