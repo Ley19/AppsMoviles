@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     TextView resultado, procedimiento;
-    Button cero, uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, multiplicacion, suma, resta, divicion, limpiar, parentesis, punto, porcentaje;
+    Button masMenos, cero, uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, multiplicacion, suma, resta, divicion, limpiar, parentesis, punto, porcentaje;
     boolean ex_parentesis = false ;
     String proceso_string;
 
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         parentesis = findViewById(R.id.btn_parentesis);
         punto = findViewById(R.id.btn_punto);
         porcentaje = findViewById(R.id.btn_porcentaje);
+        masMenos = findViewById(R.id.btn_masMenos);
 
         Mostrar_valores();
 
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 procedimiento.setText(proceso_string + "0");
             }
         });
+
         uno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 procedimiento.setText(proceso_string + "1");
             }
         });
+
         dos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 procedimiento.setText(proceso_string + "2");
             }
         });
+
         tres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 procedimiento.setText(proceso_string + "3");
             }
         });
+
         cuatro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 procedimiento.setText(proceso_string + "4");
             }
         });
+
         cinco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 procedimiento.setText(proceso_string + "5");
             }
         });
+
         seis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 procedimiento.setText(proceso_string + "6");
             }
         });
+
         siete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 procedimiento.setText(proceso_string + "7");
             }
         });
+
         ocho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
                 procedimiento.setText(proceso_string + "8");
             }
         });
+
         nueve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,54 +131,61 @@ public class MainActivity extends AppCompatActivity {
                 procedimiento.setText(proceso_string + "9");
             }
         });
+
         multiplicacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 proceso_string = procedimiento.getText().toString();
-                if (proceso_string.matches(".*\\d$") && !proceso_string.endsWith("*")) {
+                if ((proceso_string.matches(".*\\d$") && !proceso_string.endsWith("*") )||proceso_string.endsWith(")") ) {
                     procedimiento.setText(proceso_string + "*");
                 } else {
                     Toast.makeText(getApplicationContext(), "Formato no válido", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
         suma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 proceso_string = procedimiento.getText().toString();
-                if (proceso_string.matches(".*\\d$") && !proceso_string.endsWith("+")) {
+                if ((proceso_string.matches(".*\\d$") && !proceso_string.endsWith("+") )||proceso_string.endsWith(")") ) {
                     procedimiento.setText(proceso_string + "+");
                 } else {
                     Toast.makeText(getApplicationContext(), "Formato no válido", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
         resta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (proceso_string.matches(".*\\d$") && !proceso_string.endsWith("-")) {
+                proceso_string = procedimiento.getText().toString();
+                if ((proceso_string.matches(".*\\d$") && !proceso_string.endsWith("-") )||proceso_string.endsWith(")") ) {
                     procedimiento.setText(proceso_string + "-");
                 } else {
                     Toast.makeText(getApplicationContext(), "Formato no válido", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
         divicion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 proceso_string = procedimiento.getText().toString();
-                if (proceso_string.matches(".*\\d$") && !proceso_string.endsWith("/")) {
+                if ((proceso_string.matches(".*\\d$") && !proceso_string.endsWith("/") )||proceso_string.endsWith(")") ) {
                     procedimiento.setText(proceso_string + "/");
                 } else {
                     Toast.makeText(getApplicationContext(), "Formato no válido", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
         parentesis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 proceso_string = procedimiento.getText().toString();
+                procedimiento.setText("(");
                 // Verificar si el string está vacío
                 if (proceso_string.isEmpty()) {
                     procedimiento.setText("(");
@@ -182,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
                     procedimiento.setText(proceso_string + ")");
                     ex_parentesis = false;
                 }else{
-                    if (Character.isDigit(ultimoCaracter)) {
+                    if (Character.isDigit(ultimoCaracter)||proceso_string.endsWith(")")) {
                         procedimiento.setText(proceso_string + "*(");
                         ex_parentesis = true;
                     } else {
@@ -192,6 +209,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
         punto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -201,27 +219,35 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
         porcentaje.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 proceso_string = procedimiento.getText().toString();
-                if (proceso_string.matches(".*\\d$") && !proceso_string.endsWith("%")) {
+                if ((proceso_string.matches(".*\\d$") && !proceso_string.endsWith("%") )||proceso_string.endsWith(")") ) {
+
                     procedimiento.setText(proceso_string + "%");
                 } else {
                     Toast.makeText(getApplicationContext(), "Formato no válido", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+
+
     }
 
     public void limpiar(View view) {
 
         procedimiento.setText("");
         resultado.setText("");
+        ex_parentesis = false ;
 
     }
 
     public void borrar(View view) {
+
+        ex_parentesis = false ;
 
         String borrar_string = procedimiento.getText().toString();
 
@@ -235,24 +261,32 @@ public class MainActivity extends AppCompatActivity {
 
     public void Resultado_final(View view) {
 
-        proceso_string = procedimiento.getText().toString();
-        proceso_string = proceso_string.replaceAll("x", "*");
-        proceso_string = proceso_string.replaceAll("%", "/100");
+        // Si el campo de texto está vacío, no hacer nada
+        if (proceso_string.isEmpty()) {
+            procedimiento.setText("");
+            resultado.setText("");
+            Toast.makeText(getApplicationContext(), "Ingrese una funcion", Toast.LENGTH_SHORT).show();
+        }else{
 
-        Context context = Context.enter();
-        context.setOptimizationLevel(-1);
+            proceso_string = procedimiento.getText().toString();
+            proceso_string = proceso_string.replaceAll("x", "*");
+            proceso_string = proceso_string.replaceAll("%", "/100");
 
-        String resultado_final = "";
+            Context context = Context.enter();
+            context.setOptimizationLevel(-1);
 
-        try {
-            Scriptable scriptable = context.initStandardObjects();
-            resultado_final = context.evaluateString(scriptable, proceso_string, "javascript",1, null).toString();
+            String resultado_final = "";
 
-        }catch (Exception e){
-            resultado_final = "0";
+            try {
+                Scriptable scriptable = context.initStandardObjects();
+                resultado_final = context.evaluateString(scriptable, proceso_string, "javascript",1, null).toString();
+
+            }catch (Exception e){
+                resultado_final = "0";
+            }
+
+            resultado.setText(resultado_final);
+
         }
-
-        resultado.setText(resultado_final);
-
     }
 }

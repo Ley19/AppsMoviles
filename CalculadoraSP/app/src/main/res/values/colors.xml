@@ -9,7 +9,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#EC4949</color>
-    <color name="claro">#F8C6C1C1</color>
+    <color name="claro">#05C6C1C1</color>
     <color name="boton">#F8A19C9C</color>
+    <color name="Rosita">#F114B2</color>
 
 </resources>
