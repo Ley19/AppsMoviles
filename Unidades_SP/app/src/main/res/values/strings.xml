@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Unidades_SP</string>
+    <string name="title_temperatura">Temperatura</string>
+    <string name="title_volumen">Volumen</string>
+    <string name="title_longitud">Longitud</string>
+    <string name="title_peso">Peso</string>
+    <string name="txt_de">De: </string>
+    <string name="txt_a">A: </string>
+    <string name="btn_Convertir">Convertir</string>
+</resources>

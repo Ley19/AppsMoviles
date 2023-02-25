@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_temperatura">
+
+    <fragment
+        android:id="@+id/navigation_temperatura"
+        android:name="com.example.unidades_sp.ui.home.HomeFragment"
+        android:label="@string/title_temperatura"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_volumen"
+        android:name="com.example.unidades_sp.ui.dashboard.DashboardFragment"
+        android:label="@string/title_volumen"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_longitud"
+        android:name="com.example.unidades_sp.ui.notifications.NotificationsFragment"
+        android:label="@string/title_longitud"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_Peso"
+        android:name="com.example.unidades_sp.ui.Peso.PesoFragment"
+        android:label="@string/title_peso"
+        tools:layout="@layout/fragment_peso"/>
+
+</navigation>
