@@ -1,70 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_tiempo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00.00"
+            android:textSize="40dp"
+            android:layout_marginTop="3dp"/>
 
 
-    <TextView
-        android:id="@+id/tv_tiempo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="00:00:00.000"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_Reiniciar"
-        android:layout_width="55dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:background="@android:color/transparent"
-        android:drawableLeft="@drawable/ic_reiniciar"
-        android:onClick="reiniciar"
-        android:text="@string/btn_Reiniciar"
-        app:layout_constraintEnd_toStartOf="@+id/btn_Empezar"
-        app:layout_constraintTop_toBottomOf="@+id/tv_tiempo" />
-
-    <Button
-        android:id="@+id/btn_Empezar"
-        android:layout_width="55dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="96dp"
-        android:background="@android:color/transparent"
-        android:drawableLeft="@drawable/ic_reproducir"
-        android:onClick="empezar"
-        android:text="@string/btn_Empezar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_tiempo" />
-
-    <Button
-        android:id="@+id/btn_Vuelta"
-        android:layout_width="55dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
-        android:background="@android:color/transparent"
-        android:drawableLeft="@drawable/ic_bandera"
-        android:onClick="vuelta"
-        app:layout_constraintEnd_toStartOf="@+id/btn_Reiniciar"
-        app:layout_constraintHorizontal_bias="0.618"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_tiempo" />
-
-    <ListView
-        android:id="@+id/lv_vuelta"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Reiniciar"
-        app:layout_constraintVertical_bias="0.036"
-        tools:layout_editor_absoluteX="0dp" />
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginHorizontal="85dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btn_Vuelta"
+            android:layout_width="69dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:baselineAligned="false"
+            android:drawableEnd="@drawable/bandera"
+            android:onClick="vuelta"
+            app:cornerRadius="100dp"/>
+        <Button
+            android:id="@+id/btn_Empezar"
+            android:layout_width="69dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:baselineAligned="false"
+            android:drawableEnd="@drawable/pause"
+            android:onClick="empezar"
+            app:cornerRadius="100dp"/>
+
+        <Button
+            android:id="@+id/btn_Reiniciar"
+            android:layout_width="69dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:baselineAligned="false"
+            android:drawableEnd="@drawable/reiniciar"
+            android:onClick="reiniciar"
+            app:cornerRadius="100dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ListView
+            android:id="@+id/lv_vuelta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stackFromBottom="false"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

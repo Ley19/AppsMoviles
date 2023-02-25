@@ -12,13 +12,13 @@ import android.os.Handler;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private int segundos = 0;
     private boolean running = true;
     private List<String> tiempoVuelta = new ArrayList<>();
     private int numeroVuelta = 1;
+    private boolean parar = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +36,18 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, tiempoVuelta);
         listView.setAdapter(adapter);
         numeroVuelta = 1;
+        running = true;
     }
 
     public void empezar(View view) {
-        running = true;
+        if(parar == false){
+            running = false;
+            parar = true;
+        }else{
+            running = true;
+            parar = false;
+        }
+
     }
 
     public void startTimer(){
@@ -48,18 +56,21 @@ public class MainActivity extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                int horas = segundos/3600;
-                int minutos = (segundos%3600)/60;
-                int sec = segundos%60;
-                String tiempo_string = String.format("%02d:%02d:%02d", horas, minutos, sec);
+                int minutos = segundos/3600;
+                int sec = (segundos%3600)/60;
+                int milis = segundos%60;
+                String tiempo_string = String.format("%02d:%02d.%02d", minutos, sec, milis);
                 tiempo.setText(tiempo_string);
                 if(running){
                     segundos++;
                 }
-                handler.postDelayed(this,1000);
+                handler.postDelayed(this,1);
             }
         });
     }
+
+
+
 
     public void vuelta(View view) {
         String tiempoDeVuelta = ((TextView) findViewById(R.id.tv_tiempo)).getText().toString();

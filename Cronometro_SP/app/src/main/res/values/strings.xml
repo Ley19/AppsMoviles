@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Cronometro_SP</string>
+    <string name="app_name">Cronometro</string>
     <string name="btn_Empezar">Empezar</string>
     <string name="btn_Reiniciar">Reiniciar</string>
     <string name="btn_Vuelta">Vuelta</string>
