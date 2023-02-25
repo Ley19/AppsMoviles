@@ -116,10 +116,10 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             case R.id.P_anclar:
                 if(NotaSelec.isAnclar()){
                     basedatos.mainDAO().anclar(NotaSelec.getID(),false);
-                    Toast.makeText(MainActivity.this, "Desanclado", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Tarea No Completada", Toast.LENGTH_SHORT).show();
                 }else{
                     basedatos.mainDAO().anclar(NotaSelec.getID(),true);
-                    Toast.makeText(MainActivity.this, "Anclado", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Tarea Completada", Toast.LENGTH_SHORT).show();
                 }
                 notas.clear();
                 notas.addAll(basedatos.mainDAO().getAll());

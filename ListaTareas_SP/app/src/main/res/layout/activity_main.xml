@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal_700"
+    android:background="@color/white"
     tools:context=".MainActivity"
     android:orientation="vertical">
 
@@ -20,8 +20,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:text="Notas"
-                android:textColor="@color/white"
+                android:text="Notitas"
+                android:textColor="@color/teal_700"
                 android:textSize="30dp"
                 android:gravity="center"/>
 
@@ -55,11 +55,11 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="14dp"
-                android:src="@drawable/ic_mas" />
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="57dp"
+                android:layout_marginBottom="156dp"
+                android:src="@drawable/ic_mas"
+                app:backgroundTint="#EA27A2" />
 
         </RelativeLayout>
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ListaTareas_SP</string>
+    <string name="app_name">Lista de Tareas</string>
     <string name="txt_titulo">Titulo</string>
     <string name="txt_notas">Notas</string>
     <string name="txt_fecha">Fecha</string>
