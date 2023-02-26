@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Reproductor de Videos</string>
+    <string name="long_text">Holsnwjhefjwbvqwgvcwhegfv wcfbcaekcvfk</string>
+    <string name="text_wth_bullets">/u2023</string>
+
+    <string name="size_in_b">%15.2f B</string>
+    <string name="size_in_kb">%15.2f KB</string>
+    <string name="size_in_mb">%15.2f MB</string>
+    <string name="size_in_gb">%15.2f GB</string>
+
+
+</resources>
