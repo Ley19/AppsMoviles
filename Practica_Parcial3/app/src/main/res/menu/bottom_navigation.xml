@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/primer_Fragment"
+        android:icon="@drawable/ic_home"
+        android:contentDescription="casa"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/segundo_Fragment"
+        android:icon="@drawable/ic_video"
+        android:contentDescription="video"
+        android:title="Videos" />
+
+    <item
+        android:id="@+id/tercer_Fragment"
+        android:icon="@drawable/ic_store"
+        android:contentDescription="compras"
+        android:title="Store" />
+
+    <item
+        android:id="@+id/cuarto_Fragment"
+        android:icon="@drawable/ic_campana"
+        android:contentDescription="Notificaciones"
+        android:title="Notificaciones" />
+    <item
+        android:id="@+id/quinto_Fragment"
+        android:icon="@drawable/ic_menu"
+        android:contentDescription="menu"
+        android:title="Perfil" />
+
+
+</menu>
