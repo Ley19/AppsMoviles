@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fouthFragment"
+        android:icon="@android:drawable/bottom_bar"
+        android:title="Cuarto"/>
+
+    <item
+        android:id="@+id/fifthFragment"
+        android:icon="@android:drawable/btn_star"
+        android:title="Quinto"/>
+
+
+</menu>
